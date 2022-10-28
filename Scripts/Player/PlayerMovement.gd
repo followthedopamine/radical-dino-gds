@@ -1,4 +1,6 @@
-extends KinematicBody2D
+extends Node
+
+onready var player = get_node("../")
 
 export (int) var speed = 200
 
@@ -15,4 +17,4 @@ func get_input():
 	
 func _physics_process(delta):
 	get_input()
-	velocity = move_and_slide(velocity)
+	velocity = player.move_and_slide(velocity)
